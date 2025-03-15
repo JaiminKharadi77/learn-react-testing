@@ -2,14 +2,16 @@ import '@testing-library/jest-dom';
 import { render, screen } from "@testing-library/react";
 import NewGreet from './NewGreet';
 
-test("Greet renders correctly without props", () => {
+// .only will run only this test in this file
+test.only("Greet renders correctly without props", () => {
     render(<NewGreet />);
     const textElement = screen.getByText('Hello');
     expect(textElement).toBeInTheDocument();
 });
 
 
-test("Greet displays the passed name prop dynamically", () => {
+// .skip will skip  only this test in this file
+test.skip("Greet displays the passed name prop dynamically", () => {
     const name = "John K"; // Dynamic variable
     render(<NewGreet name={name} />);
 
